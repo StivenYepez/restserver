@@ -30,14 +30,15 @@ app.post('/usuario', function(req, res) {
 });
 app.put('/usuario/:id', function(req, res) {
 
-    let id = rep.params.id;
+    let id = req.params.id;
+
     res.json({
         id
-    })
+    });
 });
 app.delete('/usuario', function(req, res) {
     res.json('delete usuario')
 });
-app.listen(process.eventNames.PORT, () => {
-    console.log('Escuchando Puerto :', process.eventNames.PORT);
+app.listen(process.env.PORT, () => {
+    console.log('Escuchando Puerto :', process.env.PORT);
 });
